@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0b10">
+  <title>DeCria — Wallpapers & Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="DeCria início"><img class="brand-logo" src="logo-decria.png" alt="Logo DeCria"><span>DeCria<span class="brand-dot">.</span></span></a>
+    <nav class="nav">
+      <a class="active" href="#explorar">Explorar</a>
+      <a href="#categorias">Categorias</a>
+      <a href="#sobre">Comunidade</a>
+    </nav>
+    <div class="header-actions"><button class="login-open" id="openLogin">Entrar / Equipe</button><button class="admin-open" id="openAdmin"><span>＋</span> Publicar post</button></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> SUA DOSE DIÁRIA DE CRIATIVIDADE</div>
+        <h1>Seu próximo<br><span>visual começa</span><br>por aqui.</h1>
+        <p>Wallpapers, recursos e inspirações de design para deixar seu setup e seu celular com a sua cara.</p>
+        <div class="hero-actions"><a class="primary-btn" href="#explorar">Explorar drops <span>↗</span></a><a class="text-link" href="#sobre">Conheça a comunidade <span>→</span></a></div>
+        <div class="hero-stats"><div><strong id="postCount">06</strong><span>DROPS</span></div><i></i><div><strong>PC + MOBILE</strong><span>FEITO PRA SUA TELA</span></div></div>
+      </div>
+      <div class="hero-art">
+        <div class="art-label label-top"><span class="tiny-square"></span> VISUALS / VOL. 01</div>
+        <div class="art-card art-back"><span class="art-orbit"></span><span class="art-number">01</span></div>
+        <div class="art-card art-front"><div class="sun"></div><div class="mountain mountain-one"></div><div class="mountain mountain-two"></div><div class="art-caption">FIND YOUR<br><b>FREQUENCY.</b><small>1440 × 3200 / WALLPAPER</small></div></div>
+        <div class="art-label label-bottom">CURATED FOR YOUR SCREEN <span>✳</span></div>
+      </div>
+    </section>
+
+    <section class="category-section" id="categorias">
+      <div class="section-heading"><div><span class="section-kicker">ESCOLHA SEU ESTILO</span><h2>Categorias<span class="accent">.</span></h2></div><p>Um lugar pra cada ideia.</p></div>
+      <div class="category-list" id="categoryList">
+        <button class="category-chip selected" data-category="Todos"><span>✳</span> Todos</button>
+        <button class="category-chip" data-category="Wallpapers PC"><span>▰</span> Wallpapers PC</button>
+        <button class="category-chip" data-category="Wallpapers Mobile"><span>▯</span> Wallpapers Mobile</button>
+        <button class="category-chip" data-category="Design"><span>◈</span> Design</button>
+        <button class="category-chip" data-category="Recursos"><span>✣</span> Recursos</button>
+        <button class="category-chip" data-category="Inspiração"><span>↗</span> Inspiração</button>
+      </div>
+    </section>
+
+    <section class="feed-section" id="explorar">
+      <div class="section-heading feed-heading"><div><span class="section-kicker">RECÉM-SAÍDOS DA COMUNIDADE</span><h2>Últimos drops<span class="accent">.</span></h2></div><div class="feed-tools"><label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar posts..." aria-label="Buscar posts"></label><select id="sortSelect" aria-label="Ordenar posts"><option value="newest">Mais recentes</option><option value="oldest">Mais antigos</option></select></div></div>
+      <div class="post-grid" id="postGrid"></div>
+      <div class="empty-state" id="emptyState" hidden><div>⌕</div><h3>Nenhum drop encontrado</h3><p>Tente outra busca ou escolha uma categoria diferente.</p></div>
+    </section>
+
+    <section class="community-banner" id="sobre">
+      <div class="banner-symbol">DC<span>✳</span></div><div><span class="section-kicker">FEITO PRA QUEM CRIA</span><h2>Seu estilo. Sua tela.<br><span>Seu universo.</span></h2><p>Uma comunidade para compartilhar wallpapers, recursos visuais e inspirações de design.</p></div>
+      <button class="outline-btn" id="bannerPublish">Solte seu primeiro drop <span>↗</span></button>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#"><img class="brand-logo" src="logo-decria.png" alt="Logo DeCria"><span>DeCria<span class="brand-dot">.</span></span></a><span>WALLPAPERS • DESIGN • RECURSOS.</span><span>© <span id="year"></span> DECRIA COMMUNITY</span><div class="social-links" aria-label="Redes sociais">
+    <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram ↗</a>
+    <a href="https://discord.com/" target="_blank" rel="noopener noreferrer" aria-label="Discord">Discord ↗</a>
+    <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YouTube ↗</a>
+  </div></footer>
+
+  <div class="modal-backdrop" id="adminModal" hidden>
+    <section class="admin-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header"><div><span class="section-kicker">PAINEL DE PUBLICAÇÃO</span><h2 id="modalTitle">Novo drop<span class="accent">.</span></h2></div><button class="icon-button" id="closeAdmin" aria-label="Fechar">×</button></div>
+      <p class="modal-note">Adicione seus próprios wallpapers, arquivos de design e referências. Os posts ficam salvos neste navegador.</p>
+      <form id="postForm">
+        <label>Título do post<input name="title" required maxlength="90" placeholder="Ex.: Midnight City — Wallpaper 4K"></label>
+        <div class="form-row"><label>Categoria<select name="category" required><option>Wallpapers PC</option><option>Wallpapers Mobile</option><option>Design</option><option>Recursos</option><option>Inspiração</option></select></label><label>Formato<select name="format"><option>4K / Desktop</option><option>Full HD</option><option>Mobile</option><option>Pack de recursos</option><option>Outro</option></select></label></div>
+        <label>URL da imagem ou capa<input name="image" type="url" placeholder="https://site.com/imagem.jpg"><small>Use um link direto de imagem. Se deixar vazio, será criada uma capa visual automática.</small></label>
+        <label>Descrição<textarea name="description" rows="3" maxlength="280" placeholder="Conte um pouco sobre esse drop..."></textarea></label>
+        <label>Link para baixar ou acessar<input name="download" type="url" placeholder="https://..."><small>Pode ser link do Drive, Dropbox, MediaFire ou seu site.</small></label>
+        <div class="form-actions"><button type="button" class="cancel-btn" id="cancelAdmin">Cancelar</button><button class="primary-btn" type="submit">Publicar drop <span>↗</span></button></div>
+      </form>
+      <div class="admin-warning"><span>ⓘ</span> Este é um site estático: posts são salvos neste navegador. Para todos os visitantes verem as publicações, conecte um banco de dados ou CMS.</div>
+    </section>
+  </div>
+  <div class="modal-backdrop" id="loginModal" hidden>
+    <section class="admin-modal login-modal" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+      <div class="modal-header"><div><span class="section-kicker">ÁREA DA EQUIPE</span><h2 id="loginTitle">Entrar na DeCria<span class="accent">.</span></h2></div><button class="icon-button" id="closeLogin" aria-label="Fechar">×</button></div>
+      <p class="modal-note">Entre com seu e-mail para acessar as ferramentas de publicação. Configure a equipe no painel de demonstração abaixo.</p>
+      <form id="loginForm">
+        <label>E-mail<input name="email" type="email" required placeholder="voce@email.com"></label>
+        <label>Senha<input name="password" type="password" required minlength="4" placeholder="Sua senha"></label>
+        <button class="primary-btn" type="submit">Entrar <span>↗</span></button>
+      </form>
+      <div class="login-status" id="loginStatus">Modo demonstração: as contas deste protótipo ficam salvas somente neste navegador e não são um sistema de autenticação seguro.</div>
+      <div class="team-panel" id="teamPanel" hidden>
+        <div class="team-panel-head"><h3>Gerenciar equipe</h3><span class="role-pill" id="currentRole"></span></div>
+        <form id="inviteForm" class="invite-form">
+          <label>E-mail da pessoa<input name="inviteEmail" type="email" required placeholder="membro@email.com"></label>
+          <label>Cargo<select name="inviteRole"><option value="editor">Editor — publicar e editar</option><option value="moderator">Moderador — publicar, editar e excluir</option><option value="admin">Administrador — acesso total</option></select></label>
+          <label>Senha inicial<input name="invitePassword" type="password" minlength="4" required placeholder="Crie uma senha temporária"></label>
+          <button class="primary-btn" type="submit">Adicionar à equipe <span>＋</span></button>
+        </form>
+        <div class="team-list" id="teamList"></div>
+        <button class="cancel-btn logout-btn" id="logoutButton" type="button">Sair da conta</button>
+      </div>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
